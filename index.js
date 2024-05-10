@@ -13,10 +13,10 @@ const transporter = nodemailer.createTransport({
         pass: 'nmkexdfqvbewdvai'          // SMTP password
     }
 });
-app.get('/', (req,res)=>{
-res.status(200).send("SDFSDFSDFSD");
+app.get('/services/', (req,res)=>{
+res.status(200).send("your server is listening on 4002");
 })
-app.post('/send-email', (req, res) => {
+app.post('/services/send-email', (req, res) => {
     const { name,company,website,email,phone } = req.body;
     console.log("DSSDFSDFSDFSDF", name, company, website, email);
     const mailOptions = {
