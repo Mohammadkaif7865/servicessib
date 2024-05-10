@@ -13,6 +13,11 @@ const transporter = nodemailer.createTransport({
         pass: 'nmkexdfqvbewdvai'          // SMTP password
     }
 });
+app.use((req, res, next) => {
+    console.log('Request URL:', req.originalUrl);  // Log the incoming request URL
+    next();
+  });
+  
 app.get('/services/', (req,res)=>{
 res.status(200).send("your server is listening on 4002");
 })
